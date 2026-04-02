@@ -31,7 +31,7 @@ st.sidebar.markdown(iframe_music, unsafe_allow_html=True)
 
 # PHẦN NÚT SUB YOUTUBE (GỌN GÀNG)
 st.sidebar.markdown("---")
-my_yt_url = "https://www.youtube.com/@TenCuaBan?sub_confirmation=1" # THAY LINK TẠI ĐÂY
+my_yt_url = "https://www.youtube.com/channel/UC8mOhhDNWQWsk_fyRWy6GZA"# THAY LINK TẠI ĐÂY
 st.sidebar.markdown(f"""
     <a href="{my_yt_url}" target="_blank" style="text-decoration: none;">
         <div style="background:#FF0000; color:white; padding:10px; border-radius:10px; text-align:center; font-weight:bold;">
