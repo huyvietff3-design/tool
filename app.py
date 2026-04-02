@@ -18,27 +18,27 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# --- SIDEBAR: PHÁT DANH SÁCH NHẠC (PLAYLIST) ---
-st.sidebar.markdown("### 🎶 PLAYLIST CỰC CHÁY")
-
-# 1. Nhập ID Playlist của bạn (Đoạn sau chữ list= trên YouTube)
-# Ví dụ link: https://www.youtube.com/watch?v=...&list=RDYvpWl-qdI0g
-playlist_id = st.sidebar.text_input("ID Playlist YouTube:", value="RDxlTZywrfO7E")
-
-# 2. Mã nhúng Playlist chuyên nghiệp
-# listType=playlist: Ép YouTube nhận dạng đây là một danh sách
-iframe_playlist = f"""
-    <div style="border-radius: 15px; overflow: hidden; border: 2px solid #FF0000; box-shadow: 0 0 15px rgba(255,0,0,0.5);">
-        <iframe width="100%" height="90" 
-            src="https://www.youtube.com/embed?listType=playlist&list={playlist_id}&autoplay=1&loop=1" 
-            frameborder="0" 
-            allow="autoplay; encrypted-media; picture-in-picture">
-        </iframe>
+# PHẦN NHẠC PLAYLIST
+st.sidebar.markdown("### 🎵 NHẠC NỀN")
+playlist_id = st.sidebar.text_input("ID Playlist YouTube:", value="RDYvpWl-qdI0g")
+iframe_music = f"""
+    <div style="border-radius: 12px; overflow: hidden; border: 1px solid #FF0000;">
+        <iframe width="100%" height="80" src="https://www.youtube.com/embed?listType=playlist&list={playlist_id}&autoplay=1" 
+        frameborder="0" allow="autoplay"></iframe>
     </div>
 """
+st.sidebar.markdown(iframe_music, unsafe_allow_html=True)
 
-st.sidebar.markdown(iframe_playlist, unsafe_allow_html=True)
-st.sidebar.caption("💡 Tool sẽ tự động chuyển bài tiếp theo trong danh sách.")
+# PHẦN NÚT SUB YOUTUBE (GỌN GÀNG)
+st.sidebar.markdown("---")
+my_yt_url = "https://www.youtube.com/@TenCuaBan?sub_confirmation=1" # THAY LINK TẠI ĐÂY
+st.sidebar.markdown(f"""
+    <a href="{my_yt_url}" target="_blank" style="text-decoration: none;">
+        <div style="background:#FF0000; color:white; padding:10px; border-radius:10px; text-align:center; font-weight:bold;">
+            🔔 ĐĂNG KÝ KÊNH CỦA TÔI
+        </div>
+    </a>
+""", unsafe_allow_html=True)
 
 # --- 4. GIAO DIỆN CHÍNH ---
 st.title("🛡️ GLOBAL ACCOUNT SCANNER")
