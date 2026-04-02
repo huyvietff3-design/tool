@@ -18,17 +18,27 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# --- 3. SIDEBAR: NHẠC NỀN & EFFECT ---
-st.sidebar.markdown("### 🎵 CÀI ĐẶT NHẠC")
-music_id = st.sidebar.text_input("ID YouTube Music:", value="CFhEEPG-FiM")
-iframe_music = f"""
-    <div style="border-radius: 12px; overflow: hidden; border: 1px solid #00FF41;">
-        <iframe width="100%" height="80" src="https://www.youtube.com/embed/{music_id}?autoplay=1&loop=1&playlist={music_id}" 
-        frameborder="0" allow="autoplay"></iframe>
+# --- SIDEBAR: PHÁT DANH SÁCH NHẠC (PLAYLIST) ---
+st.sidebar.markdown("### 🎶 PLAYLIST CỰC CHÁY")
+
+# 1. Nhập ID Playlist của bạn (Đoạn sau chữ list= trên YouTube)
+# Ví dụ link: https://www.youtube.com/watch?v=...&list=RDYvpWl-qdI0g
+playlist_id = st.sidebar.text_input("ID Playlist YouTube:", value="RDxlTZywrfO7E")
+
+# 2. Mã nhúng Playlist chuyên nghiệp
+# listType=playlist: Ép YouTube nhận dạng đây là một danh sách
+iframe_playlist = f"""
+    <div style="border-radius: 15px; overflow: hidden; border: 2px solid #FF0000; box-shadow: 0 0 15px rgba(255,0,0,0.5);">
+        <iframe width="100%" height="90" 
+            src="https://www.youtube.com/embed?listType=playlist&list={playlist_id}&autoplay=1&loop=1" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media; picture-in-picture">
+        </iframe>
     </div>
 """
-st.sidebar.markdown(iframe_music, unsafe_allow_html=True)
-st.sidebar.caption("💡 Mẹo: Bấm Play trên khung nhạc nếu nhạc chưa tự chạy.")
+
+st.sidebar.markdown(iframe_playlist, unsafe_allow_html=True)
+st.sidebar.caption("💡 Tool sẽ tự động chuyển bài tiếp theo trong danh sách.")
 
 # --- 4. GIAO DIỆN CHÍNH ---
 st.title("🛡️ GLOBAL ACCOUNT SCANNER")
